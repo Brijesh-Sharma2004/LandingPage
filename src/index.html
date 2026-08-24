@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="output.css" />
+    <title>Amazon Landing Page</title>
+  </head>
+
+  <body>
+    <header class="sticky top-0 z-50">
+      <div class="w-full h-14 bg-black flex items-center">
+        <!-- Amazon_logo -->
+        <div
+          class="h-auto w-auto cursor-pointer hover:border hover:border-white px-1 py-2"
+        >
+          <img
+            src="images/Amazon_logo.svg"
+            alt="amazon logo"
+            class="h-8 w-auto ml-4 invert"
+          />
+        </div>
+
+        <!-- Location-icon -->
+        <div
+          class="flex items-center ml-6 cursor-pointer hover:border hover:border-white px-1 md:px-2 py-1 shrink-0"
+        >
+          <img
+            src="images/Location-icon.webp"
+            alt="Location-icon"
+            class="h-5 w-5"
+          />
+
+          <div class="ml-1 leading-tight">
+            <p class="text-gray-300 text-[9px] md:text-[11px]">Deliver to</p>
+            <p class="text-white font-semibold text-xs md:text-sm">India</p>
+          </div>
+        </div>
+
+        <!-- search bar -->
+        <div class="relative flex flex-1 min-w-0 ml-2 md:ml-3">
+          <select
+            class="bg-gray-200 h-10 w-10 md:w-12 rounded-l-md text-xs shrink-0"
+            id="catagories-btn"
+          >
+            <!-- <option class="text-sm text-black-100">All</option>
+            <option class="px-4 py-2 hover:bg-gray-200">Electronics</option> -->
+          </select>
+
+          <input
+            type="text"
+            placeholder="Search amazon"
+            class="bg-white pl-2 min-w-0 flex-1 outline-none text-sm"
+            id="search-input"
+          />
+          <button
+            class="bg-orange-400 hover:bg-orange-500 w-10 md:w-12 h-10 rounded-r-md shrink-0"
+          >
+            🔍
+          </button>
+
+          <!-- Suggestions -->
+          <div
+            id="suggestions"
+            class="absolute top-10 left-0 right-0 bg-white text-black shadow-lg z-40 hidden"
+          ></div>
+        </div>
+
+        <!-- language -->
+        <div
+          class="hidden md:flex items-center text-white ml-3 text-sm font-semibold cursor-pointer hover:border hover:border-white px-2 py-1"
+        >
+          <span>GB</span>
+
+          <select class="bg-black text-white outline-none cursor-pointer">
+            <option>EN</option>
+            <option>HI</option>
+            <option>FR</option>
+            <option>DE</option>
+          </select>
+        </div>
+
+        <!-- sign-in or login -->
+        <div
+          class="hidden md:block ml-3 cursor-pointer hover:border hover:border-white px-2 py-1 leading-tight shrink-0"
+        >
+          <!-- <div class="leading-tight "> -->
+          <p class="text-white text-[12px]">Hello, sign in</p>
+          <!-- </div> -->
+          <div class="flex items-center">
+            <p class="text-white font-semibold">Accounts & Lists</p>
+            <span class="text-[10px] text-white ml-1 mb-1">▼</span>
+          </div>
+        </div>
+
+        <!-- return and orders -->
+        <div
+          class="hidden md:block ml-3 cursor-pointer hover:border hover:border-white px-2 py-1 leading-tight shrink-0"
+        >
+          <p class="text-white text-[12px]">Returns</p>
+          <p class="text-white font-semibold">& Orders</p>
+        </div>
+
+        <!-- add to cart -->
+        <div
+          class="ml-2 md:ml-3 cursor-pointer hover:border hover:border-white px-2 py-1 leading-tight shrink-0"
+        >
+          <button class="flex items-center gap-1 text-white">
+            <span class="text-xl">🛒</span>
+            <span class="font-bold" id="cart-count">0</span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <!-- second col -->
+    <nav
+      class="flex justify-between items-center px-2 py-2 bg-[#232F3E] text-white sticky top-14 z-40"
+    >
+      <div>
+        <ul class="flex items-center gap-2 md:gap-6">
+          <li>
+            <button
+              href="#"
+              class="flex items-center hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+            >
+              <span id="menu-btn" class="text-2xl mr-4 md:hidden">☰</span>
+              <span>All</span>
+            </button>
+          </li>
+          <li class="hidden md:block">
+            <a
+              href="#"
+              class="hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+              >Today's Deals</a
+            >
+          </li>
+          <li class="hidden md:block">
+            <a
+              href="#"
+              class="hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+              >Customer Service</a
+            >
+          </li>
+          <li class="hidden md:block">
+            <a
+              href="#"
+              class="hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+              >Registry</a
+            >
+          </li>
+          <li class="hidden md:block">
+            <a
+              href="#"
+              class="hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+              >Gift Cards</a
+            >
+          </li>
+          <li class="hidden md:block">
+            <a
+              href="#"
+              class="hover:border hover:border-white px-2 py-1 rounded transition duration-200 text-sm"
+              >Sell</a
+            >
+          </li>
+        </ul>
+      </div>
+      <div class="hidden md:block">
+        <a
+          href="#"
+          class="hover:border border-transparent hover:border-white px-2 py-1 rounded text-sm font-semibold"
+          >Shop Deals in Electronics</a
+        >
+      </div>
+      <!-- Mobile menu  -->
+      <div
+        id="mobile-menu"
+        class="hidden absolute left-0 top-full w-64 bg-white text-black shadow-lg"
+      >
+        <ul class="flex flex-col">
+          <li>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-200">
+              Today's Deals
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-200">
+              Customer Service
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-200"> Registry </a>
+          </li>
+
+          <li>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-200">
+              Gift Cards
+            </a>
+          </li>
+
+          <li>
+            <a href="#" class="block px-5 py-3 hover:bg-gray-200"> Sell </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- filter -->
+    <div class="sticky top-24 z-30">
+      <div class="h-0.5 bg-orange-400"></div>
+      <div class="bg-[#232F3E] rounded-lg shadow-md p-3 flex flex-wrap gap-1">
+        <button
+          class="px-3 py-1 bg-yellow-400 rounded-full hover:bg-yellow-500 text-sm filter-btn"
+          id="all-products"
+          data-group="all"
+        >
+          All Products
+        </button>
+
+        <button
+          class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 text-sm filter-btn"
+          id="under-price"
+          data-group="price"
+        >
+          Under ₹30,000
+        </button>
+
+        <button
+          class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 text-sm filter-btn"
+          id="above-price"
+          data-group="price"
+        >
+          Above ₹30,000
+        </button>
+
+        <button
+          class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 text-sm filter-btn"
+          id="rating-btn"
+          data-group="rating"
+        >
+          Rating 4★+
+        </button>
+
+        <button
+          class="px-3 py-1 bg-gray-200 rounded-full hover:bg-gray-300 text-sm filter-btn"
+          id="Electronics-btn"
+          data-group="category"
+        >
+          Electronics
+        </button>
+      </div>
+    </div>
+    <main class="bg-gray-100">
+      <!-- banner -->
+      <section class="relative overflow-hidden">
+        <img class="w-full object-cover h-[40vw] max-h-125" id="banner-image" />
+      </section>
+      <!-- products -->
+      <section class="-mt-48 relative -translate-y-15 z-10 px-6">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 js-product-grid"
+        >
+          <!-- <div class="bg-white p-4 rounded shadow flex flex-col hover:shadow-xl transition duration-300">
+                    <img src="images/airpods.jpg" class="w-full h-52 object-contain">
+                    <h3 class="text-lg font-semibold">Apple AirPods Pro (2nd Gen)</h3>
+                    <p class="text-yellow-500">⭐⭐⭐⭐⭐ 4.8</p>
+                    <p class="text-2xl font-bold"> ₹22,999</p>
+                    <p class="text-gray-600 text-sm line-clamp-3">Active Noise Cancellation, Transparency Mode, USB-C Charging Case, Up to 30 Hours Battery.</p>
+                    <button class="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-full font-medium">Add to Cart</button>
+                </div>
+                <div class="bg-white p-4 rounded shadow flex flex-col hover:shadow-xl transition duration-300">
+                    <img src="images/s25ultra.jpg" class="w-full h-52 object-contain">
+                    <h3 class="text-lg font-semibold">Samsung Galaxy S25 Ultra</h3>
+                    <p class="text-yellow-500">⭐⭐⭐⭐⭐ 4.7</p>
+                    <p class="text-2xl font-bold"> ₹1,29,999</p>
+                    <p class="text-gray-600 text-sm line-clamp-3">6.9-inch AMOLED Display, 200MP Camera, Snapdragon Processor, 5000mAh Battery.</p>
+                    <button class="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-full font-medium">Add to Cart</button>
+                </div>
+                <div class="bg-white p-4 rounded shadow flex flex-col hover:shadow-xl transition duration-300">
+                    <img src="images/headphones.jpg" class="w-full h-52 object-contain">
+                    <h3 class="text-lg font-semibold">Sony WH-1000XM5</h3>
+                    <p class="text-yellow-500">⭐⭐⭐⭐⭐ 4.8</p>
+                    <p class="text-2xl font-bold"> ₹29,990</p>
+                    <p class="text-gray-600 text-sm line-clamp-3">Industry-leading Noise Cancellation, 30 Hours Battery, Bluetooth 5.2, Premium Comfort.</p>
+                    <button class="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-full font-medium">Add to Cart</button>
+                </div>
+                <div class="bg-white p-4 rounded shadow flex flex-col hover:shadow-xl transition duration-300">
+                    <img src="images/laptop.jpg" class="w-full h-52 object-contain">
+                    <h3 class="text-lg font-semibold">ASUS ROG Strix G16</h3>
+                    <p class="text-yellow-500">⭐⭐⭐⭐⭐ 4.6</p>
+                    <p class="text-2xl font-bold"> ₹1,39,990</p>
+                    <p class="text-gray-600 text-sm line-clamp-3">Intel Core i7, RTX 4060, 16GB RAM, 1TB SSD, 165Hz Display.</p>
+                    <button class="mt-4 w-full bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded-full font-medium">Add to Cart</button>
+                </div> -->
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
