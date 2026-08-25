@@ -10,7 +10,7 @@ The project focuses on recreating the structure and user experience of an e-comm
 
 ## 🌐 Live Demo
 
-🔗 **Live Demo:** *Coming Soon*
+🔗 **Live Demo:** *https://amazon-landing-page-rust.vercel.app/*
 
 ---
 
