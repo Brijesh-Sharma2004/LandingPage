@@ -354,12 +354,30 @@ const catagories = [
   "Mobiles",
   "Clothing",
   "Books",
+  "Shoes",
+  "Watches",
+  "Beauty",
+  "Home",
+  "Furniture",
+  "Sports",
+  "Toys",
+  "Gaming",
+  "Accessories",
+  "Groceries",
+  "Jewelry",
+  "Automotive",
 ];
 
 const catagoriesBtn = document.getElementById("catagories-btn");
 
+// const container = document.getElementById("filter-container");
+
+// container.scrollBy({
+//   left: 200,
+//   behavior: "smooth"
+// });
+
 catagories.forEach((catagory) => {
-  console.log("catagories");
   const option = document.createElement("option");
 
   option.textContent = catagory;
